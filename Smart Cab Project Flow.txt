@@ -1,0 +1,51 @@
+valid_states = [True, False]
+valid_actions = [None, 'forward', 'left', 'right']
+valid_inputs = {'light': TrafficLight.valid_states, 'oncoming': valid_actions, 'left': valid_actions, 'right': valid_actions}
+valid_headings = [(1, 0), (0, -1), (-1, 0), (0, 1)]  # E, N, W, S
+hard_time_limit = -100  # Set a hard time limit even if deadline is not enforced.
+
+self.grid_size = (8,6)  # (columns, rows)
+self.bounds = (1, 2, self.grid_size[0], self.grid_size[1] + 1)=(1,2,8,7)
+
+
+In Create_Agent function 
+self.agent_states[agent] = {'location': random.choice(self.intersections.keys()), 'heading': (0, 1)}
+where self.intersections is ordered dictitionary of A traffic light at each intersection
+
+next_waypoint
+
+
+*****************************************************************************
+__main__-->run()-->
+
+
+creates obj of Environment() -->which  initializes simulation variables,  Road network which creates grid with Traffic Lights at intersections, creates dummy agent, set primary_agent=none, sets enforce_deadline = False, sets trial data
+
+-->
+
+Create Learning agent class object
+
+--> Leaning Agent constructor initializes object of RoutePlanner class
+
+
+-->
+Sets the learning agent class objects as primary agent
+
+
+-->
+
+creates object of simulator class by passing obj of Environment() class 
+
+-->
+
+Simulator() class constructor sets the GUI properties like size of grid, color of lanes and log files.
+
+
+-->
+
+Calls run function of simulator
+
+--> 
+run functions
+
+Resets the environment eg resets the start and destination positions randomly
