@@ -9,11 +9,83 @@ self.bounds = (1, 2, self.grid_size[0], self.grid_size[1] + 1)=(1,2,8,7)
 
 
 In Create_Agent function 
+
 self.agent_states[agent] = {'location': random.choice(self.intersections.keys()), 'heading': (0, 1)}
 where self.intersections is ordered dictitionary of A traffic light at each intersection
 
-next_waypoint
+next_waypoint Calculation
 
+if destination is at location
+then waypoint = none
+
+if Heading the correct East or West direction
+then waypoint = forward
+
+if Heading West, destination East
+ if Destination also to the South
+    then waypoint = left
+ else waypoint = right
+
+if  Heading East, destination West
+ if Destination also to the North
+    then waypoint = left
+ else waypoint = right
+
+if Heading North destination West; Heading South destination East
+then waypoint = left
+else waypoint = right
+
+
+if destination is cardinally North or South of location
+   then 
+      if Heading the correct North or South direction
+	 then waypoint = forward
+      else if Heading North, destination South
+	   if Destination also to the West
+	       then waypoint = left
+	   else waypoint = right
+     else if Heading South, destination North
+	   if Destination also to the East
+	       then waypoint = left
+	   else waypoint = right
+     else if Heading West destination North; Heading East destination South
+	then waypoint = right
+	else waypoint = left
+
+*****************************************************************************
+  Case when waypoint is forward: i.e. cab wants to move forward
+            if light is Red
+                Log violation 2 i.e. Major violation
+                if inputs['left'] is forward or inputs['right'] is forward: i.e. Cross traffic is coming
+                    Log violation 4 i.e. Accident
+
+  Case when waypoint is left: i.e. cab wants to move left
+            if light is Red 
+                Log violation 2 i.e. Major violation when trying to turn left on red light
+
+                if inputs['left'] is forward or inputs['right'] is forward': i.e. If cab moves left in Red light and Cross traffic
+                  Log Accident
+
+                elseif inputs['oncoming'] == 'right': i.e. If cab moves left in Red light and  Oncoming cars turning right
+                   Log violation = i.e. Accident
+
+            else: i.e. light is Green 
+                if inputs['oncoming'] == 'right' or inputs['oncoming'] == 'forward': i.e. Incoming traffic on Green Light
+                   Log violation 3 i.e. Accident	
+		else i.e. No Incoming traffic on Green Light
+		  Move on Green Light safely
+
+        
+  Case waypoint is right: i.e. cab wants to move right
+            if light is Red and inputs['left'] == 'forward': i.e. Red light and Cross traffic
+                violation 3 # Accident on Red light with Cross Traffic when Cab moves Right
+            else: 
+                Turn Right safely
+
+        
+  Case waypoint is None: i.e. cab wants to perform no action:
+            if light == 'green': 
+                Log violation 1 i.e. Minor violation when cab does not move on Green Light
 
 *****************************************************************************
 __main__-->run()-->
