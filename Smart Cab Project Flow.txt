@@ -121,3 +121,25 @@ Calls run function of simulator
 run functions
 
 Resets the environment eg resets the start and destination positions randomly
+
+
+***************************
+
+ganesh.dhomase@daimler.com
+kumar.ranjan@daimler.com
+amit.k.mishra@daimler.com
+sukanta.dash@daimler.com
+tejaswa.kumar@daimler.com
+puneet.dandotiya@daimler.com
+subbarao.magapu@daimler.com
+devarakonda.prasad@daimler.com
+vinu.mudavanamkunnath@daimler.com
+bigith.pv@daimler.com
+dipika.vyas@daimler.com
+heena.thakker@daimler.com
+alexander.essandoh@daimler.com
+roberto.crespo@daimler.com
+prasant.choudhury@tcs.com
+
+
+ganesh.dhomase@daimler.com;kumar.ranjan@daimler.com;amit.k.mishra@daimler.com;sukanta.dash@daimler.com;tejaswa.kumar@daimler.com;puneet.dandotiya@daimler.com;subbarao.magapu@daimler.com;devarakonda.prasad@daimler.com;vinu.mudavanamkunnath@daimler.com;bigith.pv@daimler.com;dipika.vyas@daimler.com;heena.thakker@daimler.com;alexander.essandoh@daimler.com;roberto.crespo@daimler.com;prasant.choudhury@tcs.com
